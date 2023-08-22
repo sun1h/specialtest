@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+logging:
+  level:
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true # ???? sql ??
+    properties:
+      hibernate:
+        format_sql: true # sql ??? ??
+        default_batch_fetch_size: 1000 # ??? ??? ?? ? ?? ??? : 100 ~ 1000 ??
+        jdbc:
+          time_zone: Asia/Seoul
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
